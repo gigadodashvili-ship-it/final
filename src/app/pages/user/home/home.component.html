@@ -1,0 +1,161 @@
+<div class="home">
+  <div class="fresh bg-neutral-white-W100 dark:bg-[#3c4557]">
+    <div class="container">
+      <div class="fresh-inner relative h-[440px] flex items-center max-[950px]:justify-center overflow-hidden">
+        <div class="text flex flex-col gap-3 max-[950px]:items-center">
+          <h2 class="text-[32px] font-semibold">Fresh Arrivals Online</h2>
+          <p class="text-[14px] text-neutral-black-B500">Discover Our Newest Collection Today.</p>
+          <button
+            class="w-[183px] h-11  mt-9 bg-neutral-black-B900 text-white rounded-[4px] cursor-pointer hover:bg-neutral-black-B100 transition-all ease-linear"
+            (click)="goToListing()"
+          >View Collection</button>
+        </div>
+        <img src="imgs/home/hero.png" alt="" class="absolute right-0 max-[950px]:hidden" width="440" height="382px" >
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="features flex flex-wrap justify-between mt-[88px] max-[950px]:justify-around">
+      <div class="box w-[328px] h-[218px] flex flex-col gap-3">
+        <div class="icon dark:bg-[#3c4557] mb-3 w-12 h-12 bg-neutral-white-W100 rounded-full flex items-center justify-center">
+          <fa-icon [icon]="faTruck" size="xl"/>
+        </div>
+        <h5 class="text-[16px] font-semibold">Free Shipping</h5>
+        <p class="text-[14px] text-neutral-black-B500 w-[270px]">
+          Upgrade your style today and get FREE shipping on all orders! Don't miss out.
+        </p>
+      </div>
+
+      <div class="box w-[328px] h-[218px] flex flex-col gap-3">
+        <div class="icon dark:bg-[#3c4557] mb-3 w-12 h-12 bg-neutral-white-W100 rounded-full flex items-center justify-center">
+          <fa-icon [icon]="faAward" size="xl"/>
+        </div>
+        <h5 class="text-[16px] font-semibold">Satisfaction Guarantee</h5>
+        <p class="text-[14px] text-neutral-black-B500 w-[270px]">
+          Shop confidently with our Satisfaction Guarantee: Love it or get a refund.
+        </p>
+      </div>
+
+      <div class="box w-[328px] h-[218px] flex flex-col gap-3">
+        <div class="icon dark:bg-[#3c4557] mb-3 w-12 h-12 bg-neutral-white-W100 rounded-full flex items-center justify-center">
+          <fa-icon [icon]="faShieldHalved" size="xl"/>
+        </div>
+        <h5 class="text-[16px] font-semibold">Secure Payment</h5>
+        <p class="text-[14px] text-neutral-black-B500 w-[270px]">
+          Your security is our priority. Your payments are secure with us.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="best-selling mt-[72px]">
+      <div class="title mx-auto w-40 flex flex-col gap-2">
+        <p class="text-[12px] text-neutral-black-B300 uppercase">Shop Now</p>
+        <h3 class="text-[24px] font-bold text-neutral-black-B900 capitalize">Best Selling</h3>
+      </div>
+
+      <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
+        <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
+          *ngFor="let product of products | slice: 0 : 4"
+             (click)="goToProduct(product.id)"
+        >
+          <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
+            <img
+              [src]=product.image
+              alt="Shoes"/>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title text-[14px]">
+              {{product.title}}
+            </h2>
+            <div class="card-actions justify-around">
+              <div class="badge badge-outline px-4 py-[2px] h-[28px]">{{product.isStock ? "In stock" : "Out of stock"}}</div>
+              <div class=""><p>$ {{product.price}}</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="paradise mt-[168px] bg-neutral-white-W100 dark:bg-[#3c4557] w-full">
+    <div class="container">
+      <div class="paradise-inner flex  justify-between py-[52px] relative overflow-hidden h-[304px] max-[950px]:justify-center items-center">
+        <div class="text flex flex-col gap-6 max-[850px]:items-center max-[850px]:text-center">
+          <h3 class="text-[24px] font-bold text-neutral-black-B900">Browse Our Fashion Paradise!</h3>
+          <p class="text-[14px] text-neutral-black-B500 w-[460px] max-[850px]:w-full">Step into a world of style and explore our diverse collection of clothing categories.</p>
+          <button
+            class="w-[177px] h-11 bg-neutral-black-B900 text-white rounded-[4px]"
+            (click)="goToListing()"
+          >Start Browsing</button>
+        </div>
+
+        <img src="https://s3-alpha-sig.figma.com/img/8cc9/f607/e22ea11cc9c0fb0df83525da3489524f?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GkFaJcirWQowZpJkbiDotITCuV0UuwJjXean19p3AXXhpwmHr~YKEe368pSlxYhRBY~fZgDn2uXhHL9r~T3HVHEeIMb86amcTI6m71XZLtjemU9V978jqE4iuswnkfJfEjhkNjvCiKSuD0Iq5SBmipAdwxZUcFMZcEmX-cpRrhtuizxcGGwTnghTAGyaWsoFrHd~dJsao8JmYlPBa2jong-m1Tqf6bt64Yemx~NhgVehxm8tNgwjKk4lo~5JCAJ7e7RfuDP3Vujk-sjPQusI6aDNZo053cZdvCwdbGJPPMOnlzH1VAzOVmsZQolR0cG7~3gr-qmpEkv2PBpaUhLX5w__"
+             alt="" class="absolute right-0 max-[850px]:hidden" width="225px" height="311px">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="featured-Latest mt-[150px]">
+        <div class="tabs tabs-bordered relative" role="tablist">
+          <input type="radio" name="taber" role="tab" class="tab absolute top-0 left-[25%]" aria-label="Featured" checked="checked">
+          <div class="tab-content" role="tabpanel">
+            <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
+              <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
+                   *ngFor="let product of products | slice: 4 : 8"
+                   (click)="goToProduct(product.id)"
+              >
+                <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
+                  <img
+                    [src]=product.image
+                    alt="Shoes"/>
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title text-[14px]">
+                    {{product.title}}
+                  </h2>
+                  <div class="card-actions justify-around">
+                    <div class="badge badge-outline px-4 py-[2px] h-[28px]">{{product.isStock ? "In stock" : "Out of stock"}}</div>
+                    <div class=""><p>$ {{product.price}}</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input type="radio" name="taber" role="tab" class="tab absolute top-0 right-[25%]" aria-label="Latest">
+
+          <div class="tab-content" role="tabpanel">
+            <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
+              <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
+                   *ngFor="let product of products | slice: 6"
+                   (click)="goToProduct(product.id)"
+              >
+                <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
+                  <img
+                    [src]=product.image
+                    alt="Shoes"/>
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title text-[14px]">
+                    {{product.title}}
+                  </h2>
+                  <div class="card-actions justify-around">
+                    <div class="badge badge-outline px-4 py-[2px] h-[28px]">{{product.isStock ? "In stock" : "Out of stock"}}</div>
+                    <div class=""><p>$ {{product.price}}</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--        <p class="px-[16px] py-[3px] border border-neutral-white-W200 rounded-[100px]">Featured</p>-->
+<!--        <p class="px-[16px] py-[3px] border border-neutral-white-W200 rounded-[100px]">Latest</p>-->
+
+    </div>
+  </div>
+</div>
